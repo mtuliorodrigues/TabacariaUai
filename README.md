@@ -23,6 +23,8 @@ npm ci
 npm run dev
 ```
 
+Copie `.env.example` para `.env.local` e preencha as variáveis públicas do Supabase. Em produção, elas são configuradas na Vercel.
+
 Para validar exatamente o build publicado, sirva a pasta `dist/` com qualquer servidor HTTP estático.
 
 ## Supabase
