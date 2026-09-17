@@ -1,6 +1,41 @@
-# vinext-starter
+# Tabacaria Uai ERP
 
-A clean full-stack starter running on [vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and Drizzle support.
+Painel corporativo da Tabacaria Uai para autenticação, clientes, produtos, estoque e administração.
+
+## Estrutura
+
+- `app/`: rotas e telas do aplicativo (Next/Vinext).
+- `components/`: componentes reutilizáveis da interface.
+- `db/` e `drizzle/`: esquema e migrações locais.
+- `public/`: assets públicos.
+- `dist/`: build estático atualmente publicado em produção.
+- `.openai/hosting.json`: configuração do projeto Sites.
+
+## Executar localmente
+
+Requer Node.js 22.13+.
+
+```bash
+npm ci
+npm run dev
+```
+
+Para validar exatamente o build publicado, sirva a pasta `dist/` com qualquer servidor HTTP estático.
+
+## Supabase
+
+O build publicado usa a integração browser-safe do projeto Supabase da Tabacaria Uai. Não coloque service-role keys, tokens ou credenciais em arquivos versionados. Para uma futura separação por ambiente, use `SUPABASE_URL` e `SUPABASE_PUBLISHABLE_KEY` em um `.env.local`, que já é ignorado pelo Git.
+
+## Testes e publicação
+
+```bash
+npm run lint
+npm run build
+```
+
+O repositório oficial é `mtuliorodrigues/TabacariaUai`. A publicação atual permanece no Sites; a Vercel está conectada ao mesmo repositório conforme configuração feita no painel da Vercel.
+
+<!-- Detailed starter documentation retained below for reference. -->
 
 ## Prerequisites
 
