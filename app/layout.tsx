@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Tabacaria Uai | Tabacaria e Adega",
-  description: "Tabacaria Uai — tabacaria e adega.",
+  title: "Uai ERP | Tabacaria e Adega",
+  description: "Sistema de gestão da Tabacaria Uai.",
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
 

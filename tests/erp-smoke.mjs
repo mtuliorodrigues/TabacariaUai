@@ -2,12 +2,17 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
-test("build estático contém os fluxos críticos do ERP", async () => {
-  const html = await readFile(new URL("../dist/index.html", import.meta.url), "utf8");
-  assert.match(html, /supabase/i);
-  assert.match(html, /accountMenu/);
-  assert.match(html, /stopImmediatePropagation/);
-  assert.match(html, /logout/);
-  assert.match(html, /products/i);
-  assert.match(html, /clients/i);
+test("a interface fonte contém os módulos fundamentais do ERP", async () => {
+  const page = await readFile(new URL("../app/page.tsx", import.meta.url), "utf8");
+  for (const sectionName of ["Visão geral", "Clientes", "Produtos", "Estoque", "Vendas", "Financeiro"]) {
+    assert.match(page, new RegExp(sectionName));
+  }
+  assert.match(page, /Novo cliente/);
+  assert.match(page, /Novo produto/);
+});
+
+test("o domínio inicial separa clientes de produtos", async () => {
+  const domain = await readFile(new URL("../lib/erp.ts", import.meta.url), "utf8");
+  assert.match(domain, /export type Customer/);
+  assert.match(domain, /export type Product/);
 });

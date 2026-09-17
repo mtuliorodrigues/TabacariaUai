@@ -1,10 +1,13 @@
-# Tabacaria Uai ERP
+# Uai ERP — Tabacaria e Adega
 
-Painel corporativo da Tabacaria Uai para autenticação, clientes, produtos, estoque e administração.
+Base do ERP da Tabacaria Uai. A primeira entrega reúne painel operacional, clientes, produtos e leitura de estoque. PDV, financeiro e controle de acesso já possuem módulos reservados para evoluírem sobre a mesma base.
+
+> O estado atual é uma demonstração de interface: os cadastros existem apenas durante a sessão do navegador. Não use para operação real até implantar banco de dados, autenticação e regras de permissão.
 
 ## Estrutura
 
 - `app/`: rotas e telas do aplicativo (Next/Vinext).
+- `lib/erp.ts`: contratos de domínio e dados de demonstração, substituíveis por repositórios persistentes.
 - `components/`: componentes reutilizáveis da interface.
 - `db/` e `drizzle/`: esquema e migrações locais.
 - `public/`: assets públicos.
